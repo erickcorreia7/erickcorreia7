@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SlowForm - Pagamento com Boleto</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: #020202;
+                color: #333;
+            }
+
+            :root {
+                --primary-color: #19191a;
+                --secondary-color: #373739;
+                --accent-color: #c9b977;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                background-color: var(--primary-color);
+            }
+
+            nav .logo {
+                font-size: 24px;
+                color: var(--secondary-color);
+            }
+
+            nav .logo span {
+                color: var(--accent-color);
+            }
+
+            .pagamento-container {
+                max-width: 600px;
+                margin: 40px auto;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                padding: 40px;
+            }
+
+            .pagamento-container h1 {
+                margin-bottom: 30px;
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
+            .form-group input,
+            .form-group select {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 16px;
+                font-family: 'Montserrat', sans-serif;
+                transition: border-color 0.3s;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus {
+                outline: none;
+                border-color: var(--accent-color);
+                box-shadow: 0 0 5px rgba(201, 185, 119, 0.3);
+            }
+
+            .boleto-info {
+                background: #f9f9f9;
+                border: 2px solid var(--accent-color);
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .boleto-info h3 {
+                color: var(--accent-color);
+                margin-bottom: 10px;
+            }
+
+            .boleto-numero {
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                font-family: 'Courier New', monospace;
+                font-size: 18px;
+                font-weight: bold;
+                word-break: break-all;
+                margin: 15px 0;
+            }
+
+            .boleto-info p {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.6;
+            }
+
+            .botoes {
+                display: flex;
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .botoes button {
+                flex: 1;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .btn-confirmar {
+                background-color: var(--accent-color);
+                color: var(--secondary-color);
+            }
+
+            .btn-confirmar:hover {
+                background-color: var(--accent-color);
+            }
+
+            .btn-voltar {
+                background-color: var(--secondary-color);
+                color: #fff;
+            }
+
+            .btn-voltar:hover {
+                background-color: var(--primary-color);
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">Slow<span>Form</span></div>
+        </nav>
+
+        <div class="pagamento-container">
+            <h1>Pagamento com Boleto</h1>
+
+            <form method="get" action="index2.html">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                </div>
+
+                <div class="boleto-info">
+                    <h3>Código de Barras</h3>
+                    <div class="boleto-numero">12345.67890 12345.678901 12345.678901 1 12345678901234</div>
+                    <p><strong>Vencimento:</strong> 15/05/2026</p>
+                    <p><strong>Valor:</strong> R$ 99,00</p>
+                    <p style="margin-top: 15px;">Copie o código de barras e pague no seu banco ou em uma casa lotérica.</p>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit" class="btn-confirmar">Confirmar Pagamento</button>
+                    <button type="button" class="btn-voltar" onclick="history.back();">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
